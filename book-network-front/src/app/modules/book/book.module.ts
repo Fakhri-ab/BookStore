@@ -13,7 +13,7 @@ import {FormsModule} from "@angular/forms";
 import { BorrowedBookListComponent } from './pages/borrowed-book-list/borrowed-book-list.component';
 import { ReturnedBooksComponent } from './pages/returned-books/returned-books.component';
 import { BookDetailsComponent } from './pages/book-details/book-details.component';
-import { TestComponent } from './pages/test/test.component';
+
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { TestComponent } from './pages/test/test.component';
     BorrowedBookListComponent,
     ReturnedBooksComponent,
     BookDetailsComponent,
-    TestComponent
+
   ],
   imports: [
     CommonModule,
