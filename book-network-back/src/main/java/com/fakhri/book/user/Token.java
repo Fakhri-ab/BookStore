@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+//@Entity
 public class Token {
 
     @Id

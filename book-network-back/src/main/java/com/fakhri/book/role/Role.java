@@ -20,9 +20,9 @@ import java.util.List;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "role")
-@EntityListeners(AuditingEntityListener.class)
+// @Entity
+// @Table(name = "role")
+// @EntityListeners(AuditingEntityListener.class)
 public class Role {
 
     @Id

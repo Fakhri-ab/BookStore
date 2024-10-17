@@ -23,11 +23,11 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 
-@Service
+//@Service
 @RequiredArgsConstructor
 public class AuthenticationService {
 
-    private final UserRepository userRepository;
+    /*private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
@@ -133,5 +133,5 @@ public class AuthenticationService {
         savedToken.setValidatedAt(LocalDateTime.now());
         tokenRepository.save(savedToken);
 
-    }
+    }*/
 }

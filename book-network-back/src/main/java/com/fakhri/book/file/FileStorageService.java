@@ -25,17 +25,21 @@ public class FileStorageService {
     @Value("${application.file.uploads.photos-output-path}")
     private String fileUploadPath;
 
-    public Object saveFile(@Nonnull MultipartFile sourceFile,
-                           @Nonnull Integer userId ) {
-
+    public String saveFile(
+            @Nonnull MultipartFile sourceFile,
+            @Nonnull String userId
+    ) {
         final String fileUploadSubPath = "users" + separator + userId;
         return uploadFile(sourceFile, fileUploadSubPath);
     }
 
-    private Object uploadFile(MultipartFile sourceFile, String fileUploadSubPath) {
-
+    private String uploadFile(
+            @Nonnull MultipartFile sourceFile,
+            @Nonnull String fileUploadSubPath
+    ) {
         final String finalUploadPath = fileUploadPath + separator + fileUploadSubPath;
         File targetFolder = new File(finalUploadPath);
+
         if (!targetFolder.exists()) {
             boolean folderCreated = targetFolder.mkdirs();
             if (!folderCreated) {
@@ -43,7 +47,6 @@ public class FileStorageService {
                 return null;
             }
         }
-
         final String fileExtension = getFileExtension(sourceFile.getOriginalFilename());
         String targetFilePath = finalUploadPath + separator + currentTimeMillis() + "." + fileExtension;
         Path targetPath = Paths.get(targetFilePath);
@@ -55,7 +58,6 @@ public class FileStorageService {
             log.error("File was not saved", e);
         }
         return null;
-
     }
 
     private String getFileExtension(String fileName) {
